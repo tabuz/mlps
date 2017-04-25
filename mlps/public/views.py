@@ -9,6 +9,8 @@ from mlps.user.forms import RegisterForm
 from mlps.user.models import User
 from mlps.utils import flash_errors
 
+from google import google, images
+
 blueprint = Blueprint('public', __name__, static_folder='../static')
 
 
@@ -16,6 +18,27 @@ blueprint = Blueprint('public', __name__, static_folder='../static')
 def load_user(user_id):
     """Load user by ID."""
     return User.get_by_id(int(user_id))
+
+@blueprint.route('/search_for/<phrase>')
+def picture_search(phrase):
+    """Picture search"""
+    # options = images.ImageOptions()
+    # options.image_type = images.ImageType.CLIPART
+    # options.larger_than = images.LargerThan.MP_4
+    # results = google.search_images(phrase, options)
+    form = LoginForm(request.form)
+    return render_template('public/about.html', phrase=phrase)
+
+
+
+
+
+
+
+
+
+
+
 
 
 @blueprint.route('/', methods=['GET', 'POST'])

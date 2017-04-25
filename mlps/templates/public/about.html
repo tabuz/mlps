@@ -4,8 +4,19 @@
 {% block content %}
 <div class="body-content">
     <div class="row">
-      <h1>About</h1>
-      <p>This template was created by <a href="http://github.com/sloria/">Steven Loria</a> for use with the <a href="http://github.com/audreyr/cookiecutter/">cookiecutter</a> package by <a href="http://github.com/audreyr/">Audrey Roy</a>.</p>
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                    <button id="search_submit" class="btn btn-default" type="button">Go!</button>
+                </span>
+                <div class="container">
+                    <div class="row">
+                        <span>Wartosc argumentu 1: </span>{{ phrase }}
+                    </div>
+                </div>
+            </div><!-- /input-group -->
+        </div>
     </div>
 </div>
 {% endblock %}
